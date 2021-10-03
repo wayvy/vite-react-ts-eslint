@@ -1,0 +1,19 @@
+@import 'reset.scss';
+
+*:active {
+  -webkit-tap-highlight-color: transparent;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  outline: none;
+}
+
+html,
+body {
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+}

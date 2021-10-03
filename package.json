@@ -7,7 +7,7 @@
     "build": "tsc && NODE_ENV=productuion vite build",
     "build-dev": "tsc && NODE_ENV=development vite build",
     "build-zip": "tsc && NODE_ENV=productuion IS_ZIP=true vite build",
-    "style-fix": "prettier --write src/**/*.{ts,tsx,css}",
+    "style-fix": "prettier --write **/*.{ts,tsx,json,scss,css}",
     "lint-fix": "eslint src --fix",
     "code-fix": "yarn style-fix && yarn lint-fix"
   },
@@ -43,6 +43,7 @@
     "husky": "7.0.2",
     "lint-staged": "11.1.2",
     "prettier": "^2.4.1",
+    "sass": "^1.42.1",
     "typescript": "^4.1.2",
     "vite": "^2.5.10",
     "vite-aliases": "^0.8.6",
