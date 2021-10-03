@@ -3,6 +3,7 @@
     "baseUrl": "./src",
     "paths": {
       "@components/*": ["components/*"],
+      "@img/*": ["img/*"],
       "@styles/*": ["styles/*"]
     },
     "target": "ESNext",

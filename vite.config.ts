@@ -3,6 +3,7 @@ import reactRefresh from '@vitejs/plugin-react-refresh';
 import { ViteAliases } from 'vite-aliases';
 import { qrcode } from 'vite-plugin-qrcode';
 import Inspect from 'vite-plugin-inspect';
+const reactSvgPlugin = require('vite-plugin-react-svg');
 
 const generateConfig = () => {
   const ENV = {
@@ -16,7 +17,7 @@ const generateConfig = () => {
   const assetsDir = ENV.isZip ? '' : 'assets';
   const base = ENV.isZip ? './' : '/';
 
-  const prodPlugins = [ViteAliases()];
+  const prodPlugins = [ViteAliases(), reactSvgPlugin()];
   const devPlugins = [reactRefresh(), qrcode(), Inspect()];
   const plugins = ENV.isProd ? prodPlugins : [...prodPlugins, ...devPlugins];
 
