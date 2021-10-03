@@ -3,17 +3,16 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "dev": "vite",
-    "host": "vite --host",
-    "build": "tsc && vite build",
-    "prettier-fix": "prettier --write src/**/*.{ts,tsx,css}",
-    "lint-fix": "eslint src --fix"
+    "dev": "NODE_ENV=development vite --host",
+    "build": "tsc && NODE_ENV=productuion vite build",
+    "build-dev": "tsc && NODE_ENV=development vite build",
+    "build-zip": "tsc && NODE_ENV=productuion IS_ZIP=true vite build",
+    "style-fix": "prettier --write src/**/*.{ts,tsx,css}",
+    "lint-fix": "eslint src --fix",
+    "code-fix": "yarn style-fix && yarn lint-fix"
   },
   "lint-staged": {
-    "*.{ts,js}?(x)": [
-      "yarn prettier-fix",
-      "yarn eslint-fix"
-    ]
+    "*.{ts,js}?(x)": "yarn code-fix"
   },
   "husky": {
     "hooks": {
@@ -25,6 +24,7 @@
     "react-dom": "^17.0.0"
   },
   "devDependencies": {
+    "@types/node": "^16.10.2",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.32.0",

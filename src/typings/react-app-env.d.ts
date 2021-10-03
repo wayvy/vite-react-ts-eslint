@@ -16,10 +16,9 @@ declare namespace NodeJS {
      *
      */
     readonly NODE_ENV: 'development' | 'production';
+    readonly IS_ZIP: 'true' | 'false';
   }
 }
-
-declare let process: NodeJS.Process;
 
 declare module '*.gif' {
   const src: string;
